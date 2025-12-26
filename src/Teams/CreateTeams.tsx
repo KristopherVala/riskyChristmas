@@ -10,10 +10,10 @@ interface CreateTeamsProps {
   }[];
   setTeams: Dispatch<SetStateAction<CreateTeamsProps["teams"]>>;
   setPageView: React.Dispatch<React.SetStateAction<string>>;
-  setCreateTeams: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowCreateTeams: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const CreateTeams = ({ setTeams, setPageView, setCreateTeams }: CreateTeamsProps) => {
+const CreateTeams = ({ setTeams, setPageView, setShowCreateTeams }: CreateTeamsProps) => {
   const [stage, setStage] = useState(0);
   const [numTeams, setNumTeams] = useState(0);
   const [tempTeams, setTempTeams] = useState<Array<{ name: string; players: string }>>([]);
@@ -50,7 +50,7 @@ const CreateTeams = ({ setTeams, setPageView, setCreateTeams }: CreateTeamsProps
     }));
     setTeams(newTeams);
     setPageView("Questions");
-    setCreateTeams(false);
+    setShowCreateTeams(false);
   };
 
   const renderStage = () => {

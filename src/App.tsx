@@ -10,7 +10,7 @@ const App = () => {
 
   const [pageView, setPageView] = useState("intro");
   const [activeTeam, setActiveTeam] = useState(0);
-  const [showCreateTeams, setCreateTeams] = useState(false);
+  const [showCreateTeams, setShowCreateTeams] = useState(false);
 
   const [teams, setTeams] = useState<
     | {
@@ -45,12 +45,17 @@ const App = () => {
           </div>
           <button
             className="absolute left-1/2 -translate-x-1/2 bottom-1/3 text-white cursor-pointer border-white border p-4 hover:bg-white hover:text-black transition-all duration-300 font-semibold hover:border-black"
-            onClick={() => setCreateTeams(true)}
+            onClick={() => setShowCreateTeams(true)}
           >
             START
           </button>
           {showCreateTeams && (
-            <CreateTeams teams={teams} setTeams={setTeams} setPageView={setPageView} showCreateTeams={setCreateTeams} />
+            <CreateTeams
+              teams={teams}
+              setTeams={setTeams}
+              setPageView={setPageView}
+              setShowCreateTeams={setShowCreateTeams}
+            />
           )}
         </div>
       ) : (
