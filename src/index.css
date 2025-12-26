@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.indentShadow {
+  box-shadow: 6px 6px 0px 0px #000;
+}
+
+.smallShadow {
+  box-shadow: 3px 3px 0px 0px #000;
+}
