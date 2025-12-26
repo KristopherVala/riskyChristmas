@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://KristopherVala.github.io/risky-christmas",
+  "homepage": "https://KristopherVala.github.io/riskyChristmas",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
