@@ -1,5 +1,3 @@
-import { time } from "console";
-
 export const christmasTrivia = [
   {
     question: "Which country is most commonly credited with starting the tradition of the Christmas tree?",
