@@ -22,19 +22,25 @@ const App = () => {
     | []
   >([]);
   const nextQuestion = () => {
-    //Add other logic
     if (questionIndex === christmasTrivia.length - 1) return;
     setQuestionIndex(questionIndex + 1);
     setActiveTeam(activeTeam === teams.length - 1 ? 0 : activeTeam + 1);
   };
 
+  const prevQuestion = () => {
+    if (questionIndex === 0) return;
+    setQuestionIndex(questionIndex - 1);
+    setActiveTeam(activeTeam === 0 ? teams.length - 1 : activeTeam - 1);
+  };
+
   const controls = [
     { name: "Wheel", handler: setPageView, visible: "Questions" },
     { name: "Questions", handler: setPageView, visible: "Wheel" },
+    { name: "Prev", handler: prevQuestion, visible: "Questions" },
     { name: "Next", handler: nextQuestion, visible: "Questions" },
   ];
   return (
-    <div className="bg-black p-4 h-screen relative">
+    <div className="bg-black p-6 h-screen relative">
       <Snowfall style={{ zIndex: 10 }} />
 
       {pageView === "intro" ? (

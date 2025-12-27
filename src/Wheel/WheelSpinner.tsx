@@ -8,6 +8,7 @@ const WheelSpinner = () => {
   const [showModal, setShowModal] = useState(false);
   const [timer, setTimer] = useState(0);
   const [isTimerActive, setIsTimerActive] = useState(false);
+  const [showSteal, setShowSteal] = useState(false);
 
   const selectedGame = WheelResults.find((e) => e.key === prizeNumber);
 
@@ -18,6 +19,7 @@ const WheelSpinner = () => {
       setTimer((prev) => {
         if (prev <= 1) {
           setIsTimerActive(false);
+          setShowSteal(true);
           return 0;
         }
         return prev - 1;
@@ -40,11 +42,13 @@ const WheelSpinner = () => {
   const startTimer = () => {
     setTimer(selectedGame?.time || 0);
     setIsTimerActive(true);
+    setShowSteal(false);
   };
 
   const resetTimer = () => {
     setTimer(0);
     setIsTimerActive(false);
+    setShowSteal(false);
   };
 
   const closeModal = () => {
@@ -53,7 +57,7 @@ const WheelSpinner = () => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
       <div className="relative flex justify-center mt-3 bg-white rounded-full max-w-fit indentShadow">
         <div className="absolute top-12.5 right-7.5 rotate-45 -translate-x-1/2 -translate-y-2 z-10">
           <div
@@ -119,7 +123,7 @@ const WheelSpinner = () => {
                 }`}
               >
                 <p className="text-sm uppercase tracking-wide mb-2 text-center">Time Challenge</p>
-                {timer > 0 && <p className="text-4xl font-bold text-center mb-4">{timer}s</p>}
+                {!showSteal && timer > 0 && <p className="text-4xl font-bold text-center mb-4">{timer}s</p>}
                 <div className="flex gap-2">
                   <button
                     onClick={startTimer}
@@ -146,6 +150,22 @@ const WheelSpinner = () => {
             >
               Close
             </button>
+          </div>
+        </div>
+      )}
+      {showSteal && (
+        <div
+          className="fixed inset-0 flex items-center justify-center  z-50"
+          onClick={() => {
+            setShowSteal(false);
+            setShowModal(false);
+          }}
+        >
+          <div
+            className="bg-linear-to-br from-red-600 to-red-800 rounded-3xl shadow-2xl p-16 border-4 border-green-400"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h1 className="text-8xl font-black text-white text-center drop-shadow-2xl animate-bounce">STEAL!</h1>
           </div>
         </div>
       )}

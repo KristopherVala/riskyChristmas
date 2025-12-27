@@ -168,14 +168,14 @@ export const WheelResults = [
     game: "Caroling Chaos",
     instructions:
       "Sing it Out! Pick a card, and using the one festive word indicated as your only lyric, get your team to name that tune before the time runs out.",
-    time: 20,
+    time: 1,
   },
   {
     key: 1,
     game: "Dance Monkey",
     instructions:
       "Dance monkey! Without using the secret word/action indicated on the card, your whole team calls out commands to have you act out a seasonal activity! Like a good monkey, guess what you're being forced to do before the time runs out!",
-    time: 60,
+    time: 1,
   },
 
   {
@@ -183,7 +183,7 @@ export const WheelResults = [
     game: "Act a Fool",
     instructions:
       "Musical Cherades! Using gestures only, get your team to guess the festive song title on the back of your card. The normal rules of Cormack Cherades apply.",
-    time: 40,
+    time: 1,
   },
   { key: 3, game: "Scrooges Score", instructions: "100 Bonus points. That's it. Take them, you Scrooge." },
   {
@@ -192,4 +192,50 @@ export const WheelResults = [
     instructions:
       "Tax break! You've been making too much income in Whoville. The taxman is coming for you! Donate 100 points to the starving orphans whos to get him off your back!",
   },
+];
+
+export const wrongSayings = [
+  "Nice Try Guy",
+  "Are you even trying?",
+  "Not quite, champ",
+  "Swing and a miss!",
+  "Better luck next time",
+  "Ooof, that's not it",
+  "Reading is fundamental",
+  "Did you even listen?",
+  "Back to the drawing board",
+  "That's a no from me",
+  "Not even close",
+  "Bless your heart",
+  "Think harder next time",
+  "Maybe pay attention?",
+  "Comprehension skills needed",
+  "Try reading it again",
+  "Focus up next time",
+  "Were you guessing?",
+  "Education is key",
+  "Might want to study more",
+];
+
+export const correctSayings = [
+  "Wahoo!",
+  "Very Smart",
+  "Nailed it!",
+  "Look at you go!",
+  "Smarty pants!",
+  "You're on fire!",
+  "Impressive!",
+  "Well done!",
+  "Christmas genius!",
+  "Crushing it!",
+  "Correct! Nice work",
+  "You got it!",
+  "That's right!",
+  "Brilliant!",
+  "Spot on!",
+  "You're too good!",
+  "Show off!",
+  "Knew you had it in you",
+  "Finally, someone who reads",
+  "Look who's been paying attention",
 ];
