@@ -168,14 +168,14 @@ export const WheelResults = [
     game: "Caroling Chaos",
     instructions:
       "Sing it Out! Pick a card, and using the one festive word indicated as your only lyric, get your team to name that tune before the time runs out.",
-    time: 1,
+    time: 30,
   },
   {
     key: 1,
     game: "Dance Monkey",
     instructions:
       "Dance monkey! Without using the secret word/action indicated on the card, your whole team calls out commands to have you act out a seasonal activity! Like a good monkey, guess what you're being forced to do before the time runs out!",
-    time: 1,
+    time: 450,
   },
 
   {
@@ -183,7 +183,7 @@ export const WheelResults = [
     game: "Act a Fool",
     instructions:
       "Musical Cherades! Using gestures only, get your team to guess the festive song title on the back of your card. The normal rules of Cormack Cherades apply.",
-    time: 1,
+    time: 50,
   },
   { key: 3, game: "Scrooges Score", instructions: "100 Bonus points. That's it. Take them, you Scrooge." },
   {

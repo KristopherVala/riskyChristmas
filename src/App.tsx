@@ -40,7 +40,7 @@ const App = () => {
     { name: "Next", handler: nextQuestion, visible: "Questions" },
   ];
   return (
-    <div className="bg-black p-6 h-screen relative">
+    <div className="bg-black p-6 h-screen relative overflow-hidden">
       <Snowfall style={{ zIndex: 10 }} />
 
       {pageView === "intro" ? (
