@@ -8,35 +8,36 @@ interface TeamHeaderProps {
     players: string[];
     color: string;
   }[];
-  activeTeam: number;
   setTeams: Dispatch<SetStateAction<TeamHeaderProps["teams"]>>;
 }
 
-const TeamHeader = ({ teams, activeTeam, setTeams }: TeamHeaderProps) => {
-  const handleWrong = () => {
-    // Do nothing
-  };
-
-  const handleLostIt = () => {
+const TeamHeader = ({ teams, setTeams }: TeamHeaderProps) => {
+  const handleSubHundred = (teamIndex: number) => {
     setTeams((prevTeams) =>
-      prevTeams.map((team, index) => (index === activeTeam ? { ...team, score: team.score - 50 } : team))
+      prevTeams.map((team, index) => (index === teamIndex ? { ...team, score: team.score - 100 } : team))
     );
   };
 
-  const handleCorrect = () => {
+  const handleLostIt = (teamIndex: number) => {
     setTeams((prevTeams) =>
-      prevTeams.map((team, index) => (index === activeTeam ? { ...team, score: team.score + 50 } : team))
+      prevTeams.map((team, index) => (index === teamIndex ? { ...team, score: team.score - 50 } : team))
     );
   };
-  const handleDouble = () => {
+
+  const handleCorrect = (teamIndex: number) => {
+    setTeams((prevTeams) =>
+      prevTeams.map((team, index) => (index === teamIndex ? { ...team, score: team.score + 50 } : team))
+    );
+  };
+  const handleDouble = (teamIndex: number) => {
     console.log("huh?");
     setTeams((prevTeams) =>
-      prevTeams.map((team, index) => (index === activeTeam ? { ...team, score: team.score + 100 } : team))
+      prevTeams.map((team, index) => (index === teamIndex ? { ...team, score: team.score + 100 } : team))
     );
   };
   const actionButtons = [
-    { onClick: handleWrong, color: "gray", icon: X, label: "WRONG", points: null },
-    { onClick: handleLostIt, color: "red", icon: Flame, label: "LOST IT", points: "-50" },
+    { onClick: handleLostIt, color: "red", icon: X, label: "LOST IT", points: "-50" },
+    { onClick: handleSubHundred, color: "red", icon: Flame, label: "GONE", points: "-100" },
     { onClick: handleCorrect, color: "green", icon: Check, label: "CORRECT", points: "+50" },
     { onClick: handleDouble, color: "green", icon: Trophy, label: "DOUBLE IT", points: "+100" },
   ];
@@ -47,7 +48,7 @@ const TeamHeader = ({ teams, activeTeam, setTeams }: TeamHeaderProps) => {
         {teams.map((team, index) => (
           <div
             key={index}
-            className={`group flex-1 p-4 relative rounded-lg ${index === activeTeam ? "ring-4 ring-yellow-400" : ""}`}
+            className={`group flex-1 p-4 relative rounded-lg hover:scale-105 transition-all duration-300`}
             style={{ backgroundColor: team.color }}
           >
             <h2 className="text-xl font-bold text-white">{team.name}</h2>
@@ -58,8 +59,9 @@ const TeamHeader = ({ teams, activeTeam, setTeams }: TeamHeaderProps) => {
               {actionButtons.map((btn, btnIndex) => (
                 <button
                   key={btnIndex}
-                  onClick={btn.onClick}
-                  className={`flex items-center smallShadow justify-center gap-1 bg-${btn.color}-500 cursor-pointer text-white p-2 rounded-lg font-bold hover:bg-${btn.color}-600 transition-all hover:scale-105 active:scale-95 min-w-12.5`}
+                  onClick={() => btn.onClick(index)}
+                  className={`flex items-center smallShadow justify-center gap-1 cursor-pointer text-white p-2 rounded-lg font-bold transition-all duration-300 hover:scale-105 min-w-12.5`}
+                  style={{ backgroundColor: btn.color }}
                 >
                   <btn.icon size={20} />
                   {btn.points && <span className="text-xs font-normal">{btn.points}</span>}

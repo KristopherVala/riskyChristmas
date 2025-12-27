@@ -14,21 +14,21 @@ export const christmasTrivia = [
     answer: "Isaac Newton",
     multiChoice: ["Albert Einstein", "Galileo Galilei", "Isaac Newton", "Charles Darwin"],
   },
-
+  {
+    question:
+      "Which Christmas song became the first song ever broadcast from space when it was played by astronauts aboard the Gemini 6A in 1975 as a festive prank, using a harmonica and bells smuggled aboard?",
+    answer: "Jingle Bells",
+    multiChoice: ["The First Noel", "Hark the Herald! Angels Sing", "Jingle Bells", "Santa Claus is Coming to Town"],
+  },
   {
     question: "Which country has sent a Christmas tree to London England every year since 1947 as a gift?",
     answer: "Norway",
     multiChoice: ["Canada", "Norway", "France", "Poland"],
   },
-
   {
     question: "What are two things you better not do because Santa Clause is coming to town?",
     answer: "cry, pout",
     multiChoice: ["shout, cry", "yell, cry", "cry, pout", "shout, pout"],
-  },
-  {
-    question: "In 'Jingle Bells', bells on _______ ring, making spirits bright?",
-    answer: "bobtails",
   },
   {
     question: "What language was 'Silent Night' composed in?",
@@ -46,7 +46,7 @@ export const christmasTrivia = [
     multiChoice: ["Balsam Fir", "Scotch Pine", "Blue Spruce", "Fraser Fir"],
   },
   {
-    question: "What year did 'All I Want for Christmas Is You' come out?",
+    question: "What year did the holiday anthem 'All I Want for Christmas Is You' come out?",
     answer: "1994",
     multiChoice: ["2001", "2000", "1997", "1994"],
   },
@@ -71,7 +71,7 @@ export const christmasTrivia = [
   },
   {
     question:
-      "Which famous literary peer gave this review of A Christmas Carol: 'There is no heart. No feeling – is nothing but glittering frostwork.'",
+      "Which famous literary peer of Charles Dickens gave this review of A Christmas Carol: 'There is no heart. No feeling – is nothing but glittering frostwork.'",
     answer: "Mark Twain",
     multiChoice: ["Mark Twain", "Louisa May Alcott", "Alfred Lord Tennyson", "Leo Tolstoy"],
   },
@@ -99,12 +99,11 @@ export const christmasTrivia = [
     answer: "Corn cob pipe",
   },
   {
-    question:
-      "Which popular Christmas song became the first song ever broadcast from space when it was played by astronauts aboard the Gemini 6A in 1975 as a festive prank, using a harmonica and bells smuggled aboard?",
-    answer: "Jingle Bells",
+    question: "In 'Jingle Bells', bells on _______ ring, making spirits bright?",
+    answer: "bobtails",
   },
   {
-    question: "What other food does Buddy put chocolate syrup on in Elf?",
+    question: "What food does Buddy put chocolate syrup on in Elf?",
     answer: "Spaghetti",
   },
   {
@@ -116,10 +115,9 @@ export const christmasTrivia = [
     answer: "Max",
   },
   {
-    question: "Where does the Grinch live?",
+    question: "Where does the Grinch live? (Be specific)",
     answer: "Mount Crumpit (just north of Whoville)",
   },
-
   {
     question:
       "In the Rudolph the Red Nosed Reindeer cartoon, what does the misfit elf dream of being instead of a toy maker?",
@@ -146,20 +144,21 @@ export const quizData = [
     style: { backgroundColor: "#ef4444", textColor: "white" },
   },
   {
-    option: "Act A Fool",
-    style: { backgroundColor: "#3b82f6", textColor: "white" },
-  },
-  {
-    option: "Tax Break", // this is charity
-    style: { backgroundColor: "#f59e0b", textColor: "white" },
-  },
-  {
     option: "Dance Monkey",
-    style: { backgroundColor: "#8b5cf6", textColor: "white" },
+    style: { backgroundColor: "teal", textColor: "white" },
+  },
+
+  {
+    option: "Act A Fool",
+    style: { backgroundColor: "#699c36", textColor: "white" },
   },
   {
-    option: "Pillage Pennys",
-    style: { backgroundColor: "#9790a6", textColor: "white" },
+    option: "Scrooges Score",
+    style: { backgroundColor: "#a628a6", textColor: "gold" },
+  },
+  {
+    option: "Tax Break",
+    style: { backgroundColor: "#0131f2", textColor: "white" },
   },
 ];
 
@@ -168,54 +167,29 @@ export const WheelResults = [
     key: 0,
     game: "Caroling Chaos",
     instructions:
-      "Sing it Out! Pick a card, and using the one festive word indicated, get your team to name that tune before the time runs out.",
+      "Sing it Out! Pick a card, and using the one festive word indicated as your only lyric, get your team to name that tune before the time runs out.",
     time: 20,
-    options: [
-      'Mama Mia ("snowman")',
-      'Somewhere Over The Rainbow ("Santa")',
-      'My Favourite Things ("gingerbread")',
-      'Happy Birthday ("reindeer")',
-      'Singing in the Rain ("frosty")',
-    ],
   },
   {
     key: 1,
     game: "Dance Monkey",
-    instructions: "",
-    options: [
-      "Eating Christmas dinner",
-      "Shoveling snow",
-      "Decorating the tree",
-      "Christmas Shopping",
-      "Wrapping gifts",
-      "Baking cookies",
-      "Pillaging",
-    ],
+    instructions:
+      "Dance monkey! Without using the secret word/action indicated on the card, your whole team calls out commands to have you act out a seasonal activity! Like a good monkey, guess what you're being forced to do before the time runs out!",
+    time: 60,
   },
+
   {
     key: 2,
-    game: "Musical Charades",
-    instructions: "",
-    options: [
-      "A book, a pair of glasses",
-      "A board game, a pillow",
-      "A tissue, a glove",
-      "A boot, a small orange",
-      "A candy cane, a scarf",
-      "A mug, a candle",
-    ],
-  },
-  {
-    key: 3,
     game: "Act a Fool",
-    instructions: "",
-    options: [
-      "Silent Night",
-      "Joy to the World",
-      "You're a Mean One Mr. Grinch",
-      "Rockin Around the Christmas Tree",
-      "I Want a Hippopotamus for Christmas",
-      "Jingle Bell Rock",
-    ],
+    instructions:
+      "Musical Cherades! Using gestures only, get your team to guess the festive song title on the back of your card. The normal rules of Cormack Cherades apply.",
+    time: 40,
+  },
+  { key: 3, game: "Scrooges Score", instructions: "100 Bonus points. That's it. Take them, you Scrooge." },
+  {
+    key: 4,
+    game: "Tax Break",
+    instructions:
+      "Tax break! You've been making too much income in Whoville. The taxman is coming for you! Donate 100 points to the starving orphans whos to get him off your back!",
   },
 ];

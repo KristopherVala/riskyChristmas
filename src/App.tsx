@@ -41,7 +41,7 @@ const App = () => {
         <div className="h-screen w-screen relative">
           <div className="absolute left-1/2 -translate-x-1/2 top-1/3 text-center z-30 ">
             <h1 className="text-white text-6xl">RISKY CHRISTMAS</h1>
-            <h1 className="text-white text-2xl">CORMACK EDITION TEST</h1>
+            <h1 className="text-white text-2xl">CORMACK EDITION</h1>
           </div>
           <button
             className="absolute left-1/2 -translate-x-1/2 bottom-1/3 text-white cursor-pointer border-white border p-4 hover:bg-white hover:text-black transition-all duration-300 font-semibold hover:border-black"
@@ -60,7 +60,7 @@ const App = () => {
         </div>
       ) : (
         <div className="h-full relative z-10">
-          <TeamHeader teams={teams} activeTeam={activeTeam} setTeams={setTeams} />
+          <TeamHeader teams={teams} setTeams={setTeams} />
           {pageView === "Questions" ? (
             <Questions questionIndex={questionIndex} key={questionIndex} />
           ) : (
